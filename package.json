@@ -1,0 +1,16 @@
+{
+  "name": "catblock-slack-bot",
+  "dependencies": {
+    "@slack/client": "^3.10.0",
+    "fs-extra": "^4.0.0"
+  },
+  "version": "0.0.1",
+  "description": "Slack Bot for CatBlock's Slack team",
+  "main": "CatBlock Slack Bot Node.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "catbot.js"
+  },
+  "author": "Kieran Peckett",
+  "license": "GPL-3.0"
+}
