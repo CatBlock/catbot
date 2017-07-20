@@ -2,5 +2,9 @@
   "bot-token": "API TOKEN",
   "command-character": ".",
   "debug_mode": false,
-  
+  "loaded_modules": [
+    "help",
+    "licence",
+    "messageLog"
+  ]
 }
