@@ -2,7 +2,7 @@
 
 var settings = require("./settings.js").module("settings");
 
-var loaded_modules = settings.get("loaded_modules");
+const loaded_modules = settings.get("loaded_modules");
 
 const command_character = settings.get("command-character");
 
