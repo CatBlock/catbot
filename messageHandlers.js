@@ -14,6 +14,16 @@ loaded_modules.forEach(function (value, index, array) {
 });
 
 exports.handle = function (rtm, event) {
+    // if it's a command, handle it as appropriate.
+    handleCommands();
+
+    // send all messages to logging systems or modules with more complex needs
+    // than a command
+    handleAll();
+
+};
+
+function handleCommands(rtm, event) {
     // check for commands
     if (event.text[0] === command_character) {
 
@@ -39,14 +49,16 @@ exports.handle = function (rtm, event) {
                 if (settings.debugMode)
                     console.info("  Handling command with module " + moduleName);
                 module.command_list[commandName](rtm, event, commandArgs);
-                
+
                 return true; // exit the loop
             }
             return false; // continue the loop
 
         });
     }
+}
 
+function handleAll(rtm, event) {
     // send to any modules that request all messages
     loaded_modules.forEach(function (value, index, array) {
         var module = require("./modules_installed/" + value + ".js");
@@ -54,5 +66,4 @@ exports.handle = function (rtm, event) {
             module.sendAllMessages(rtm, event);
         }
     });
-
-};
+}
