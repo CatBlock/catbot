@@ -8,7 +8,7 @@ const command_character = settings.get("command-character");
 
 // load all loaded modules. Node will cache them
 // This allows any setup that needs to be done by the module to happen
-// without it interfering with the execution of the module.
+// during bot load, rather than on first execution
 loaded_modules.forEach(function (value, index, array) {
     require("./modules_installed/" + value + ".js");
 });
