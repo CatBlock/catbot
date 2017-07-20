@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+/catblock-slack-bot
+/config/settings.json
+/config/messageLog.json
